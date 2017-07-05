@@ -1,20 +1,16 @@
 const express = require('express');
+const users = require('./routes/users');
 
 const app = express();
+const port = process.env.port || 3000;
+
+app.use('/api/users', users);
 
 app.get('/', (req, res) => {
     res.send('Anasayfa'); 
 });
 
-app.get('/api', (req, res) => {
-    res.send('Api sayfası');
-});
-
-app.get('/api/users', (req, res) => {
-    res.send('Api Kullanıcılar Listesi');
-});
-
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server 3000 portu üzerinden başlatıldı');
 });
 
