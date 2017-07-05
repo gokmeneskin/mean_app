@@ -1,0 +1,22 @@
+{
+  "name": "mean_app",
+  "version": "1.0.0",
+  "description": "Mean Blog Uygulaması",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokmeneskin/mean_app.git"
+  },
+  "author": "Gökmen Eskin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gokmeneskin/mean_app/issues"
+  },
+  "homepage": "https://github.com/gokmeneskin/mean_app#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
