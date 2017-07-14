@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost:27017/mean_app');
-
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/mean_app', { useMongoClient: true});
 mongoose.connection.on('connected', () => {
     console.log('Database bağlantısı başarılı bir şekild yapıldı');
 });
@@ -15,8 +16,9 @@ const app = express();
 // Heroku için process.env.port gerekir
 const port = process.env.port || 3000;
 
-const users = require('./routes/users');
+app.use(bodyParser.json());
 
+const users = require('./routes/users');
 app.use('/api/users', users);
 
 app.get('/', (req, res) => {
